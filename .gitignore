@@ -1,0 +1,37 @@
+# --- Terraform state (environment-specific; may contain secrets) ---
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# --- Terraform working/cache dirs and lock file (machine-specific) ---
+.terraform/
+.terraform.lock.hcl
+
+# --- Variable files that may hold real values ---
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# --- Credentials ---
+.lacework.toml
+*.lacework.toml
+
+# --- Backups written by the deploy script ---
+*.bak
+*.bak.*
+
+# --- Live working copy at the repo root (your real account ID / state stay local) ---
+# Customers consume the clean template under DSPM/. These paths are only the
+# maintainer's local test deployment and must not be published.
+/main.tf
+/version.tf
+/deploy-dspm-aws.sh
+
+# --- OS / editor noise ---
+.DS_Store
+*.swp
